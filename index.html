@@ -2,6 +2,9 @@
 <html lang="en">
   <head>
       <style>
+        body {
+background: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
+}
           h1{
               text-align: left;
               margin: auto;
@@ -22,8 +25,9 @@ margin: 25px;
               margin: 25px;
               margin-top: 10px;
           }
-          h1.temp {
-              font-size: 60px;
+          h1.temperture {
+              font-size: 75px;
+              padding-top: 30px;
           }
           div.card-group {
 margin: 25px;
@@ -51,6 +55,14 @@ text-align: center;          }
 #description{
   text-transform: capitalize;
 }
+#big-card{
+  padding-bottom: 30px;
+  padding-top: 30px;
+}
+#icon{
+  font-size: x-large;
+}
+
 </style>
 
 
@@ -69,57 +81,50 @@ text-align: center;          }
   </head>
   <div>
     <body>
-        <form>
-  <div class="form-group">
-
-    <label for="search-form">Search for a city</label>
+      <div class="container" id="big-card">
+      <div class="card">
+        <div class="card-body">
+          <form>
+            <div class="form-group">
+              <label for="search-form">Search for a city</label>
   </br>
   <div class="row">
     <div class="col-9">
-    <input 
-    type="search" 
-    class="form-control" 
-    id="city-input" 
-    placeholder="Type a city..."
-    />
+      <input 
+      type="search" 
+      class="form-control" 
+      id="city-input" 
+      placeholder="Type a city..."
+      />
     </div>
   </div>
   <div class="col-3">
-<div class="submit">
-  <button type="submit" value="search" class="btn btn-primary">Submit</button>
-  </div>
- </div> 
+    <div class="submit">
+      <button type="submit" value="search" class="btn btn-primary">Submit</button>
+    </div>
+  </div> 
  </div>
 </form>
     <hr>
-
-      <header>
-          <div class="container">
+<header>
+<div class="container">
   <div class="row align-items-start">
     <div class="col">
-<img
-src=""
-id="icon"
-alt=""
-/>
+      <img
+      src=""
+      id="icon"
+      alt=""
+      />
 </div>
 
-    <div class="col">
+<div class="col">
 <h1 id = "city"></h1>
              </div>
              <div class="col">
         <p>Current Temperature:</p>
              <h1 class="temp" id="temperature"></h1>
              </div>
-             <div class="col">
-        <p>High:</p>
-             <h3 class="temp2">66ºF</h3>
-            </div>
-            <div class="col">
-        <p>Low:</p>
-             <h3 class="temp2">46ºF</h3>
-             </div>
-             </div>
+    
              </div>
             </br>
 <div class="container">
@@ -135,75 +140,12 @@ Wind: <span id="wind"></span> km/h
     <div  class="col">
       Last updated: <span id= "date"></span>
     </div>
-  </div>     
+  </div>
+  </div>
+</div>     
+</div>
  </header>
-      <section>
-       <div class="card-group">
-  <div class="card">
-<i class="fas fa-sun sunny-icon"></i>
-    <div class="card-body">
-      <h5 class="card-title">Monday</h5>
-            <p class="card-text">Sunshine</p>
-
-      <p class="card-text">High 66ºF</p>
-            <p class="card-text">Low 46ºF</p>
-
-    </div>
-  </div>
-  <div class="card">
-<i class="fas fa-cloud-sun cloudy-icon"></i>    
-<div class="card-body">
-      <h5 class="card-title">Tuesday</h5>
-            <p class="card-text">Partially Cloudy</p>
-
-      <p class="card-text">High 67ºF</p>
-            <p class="card-text">Low 43ºF</p>
-        </div>
-  </div>
-  <div class="card">
-<i class="fas fa-cloud-rain rain-icon"></i>    
-<div class="card-body">
-      <h5 class="card-title">Wednesday</h5>
-            <p class="card-text">Rainy</p>
-
-      <p class="card-text">High 60ºF</p>
-            <p class="card-text">Low 37ºF</p>
-    </div>
-  </div>
-</div>
-<div class="card-group">
-  <div class="card">
-<i class="fas fa-cloud-rain rain-icon"></i>    
-    <div class="card-body">
-      <h5 class="card-title">Thursday</h5>
-            <p class="card-text">Rainy</p>
-
-      <p class="card-text">High 62ºF</p>
-            <p class="card-text">Low 39ºF</p>
-    </div>
-  </div>
-  <div class="card">
-<i class="fas fa-cloud-sun cloudy-icon"></i>    
-    <div class="card-body">
-     <h5 class="card-title">Friday</h5>
-                 <p class="card-text">Partially Cloudy</p>
-
-      <p class="card-text">High 62ºF</p>
-            <p class="card-text">Low 39ºF</p>
-    </div>
-  </div>
-  <div class="card">
-<i class="fas fa-sun sunny-icon"></i>
-    <div class="card-body">
-      <h5 class="card-title">Saturday</h5>
-            <p class="card-text">Sunshine</p>
-
-      <p class="card-text">High 65ºF</p>
-            <p class="card-text">Low 43ºF</p>
-    </div>
-  </div>
-</div>
-</section>
+   
 <script>
 
 function formatDate(timestamp){
@@ -272,7 +214,7 @@ function handleSubmit(event) {
 
 search("New York");
 
-let form = document.querySelector("#form");
+let form = document.querySelector("form");
 form.addEventListener("submit", handleSubmit);
 
 
